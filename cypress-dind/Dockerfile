@@ -1,4 +1,16 @@
-FROM cypress/base:10
+FROM node:10.14
+
+# Cypress stuff
+RUN apt-get update && \
+  apt-get install -y \
+    libgtk2.0-0 \
+    libnotify-dev \
+    libgconf-2-4 \
+    libnss3 \
+    libxss1 \
+    libasound2 \
+    xvfb
+
 
 # Let's start with some basic stuff.
 RUN apt-get update -qq && apt-get install -qqy \
